@@ -23,8 +23,8 @@ export default class Main extends Component {
         { index: 2, text: 'Third' },
       ]}),
       selectedBox: undefined,
-      x: 1,
-      z: -1,
+      x: 0,
+      z: 0,
     };
   }
 
@@ -41,6 +41,12 @@ export default class Main extends Component {
   handleMovement = e => {
     let event = e.nativeEvent.inputEvent;
 
+    if (_.isNumber(this.state.selectedBox)) {
+        if (event.eventType === 'click') {
+            this.setState({selectedBox:null});
+        }
+        return;
+    }
     let delta;
     switch(event.key) {
         case 'w':

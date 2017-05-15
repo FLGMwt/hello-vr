@@ -23,7 +23,7 @@ export default class HoverText extends Component {
             paddingRight: 0.2,
             textAlign: 'center',
             textAlignVertical: 'center',
-            transform: [{translate: [0, 1, -3]}],
+            transform: [{translate: [0, 1, -6]}],
             opacity: this.props.selected ? 1 : .85,
           }}
           onEnter={() => this.setState({ isFocused: true })}
